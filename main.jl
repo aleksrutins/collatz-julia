@@ -1,11 +1,11 @@
 module Collatz
-	function calc_all(max::Int)
+	function calc_all(max::BigInt)
 		Threads.@threads for i = 1:max
 			calc(i)
 		end
 	end;
 
-	function calc(i::Int)
+	function calc(i::BigInt)
 		println("Number: $i")
 		x = i
 		steps = 0
